@@ -17,7 +17,7 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      const response = await sduiClient.getHomeScreen();
+      const response = await sduiClient.getDashboardScreen();
       setScreen(response.screen);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to load screen');

@@ -1,12 +1,44 @@
-# 📚 Índice de Documentación - Proyecto SDUI
+# 📚 Índice de Documentación - SDUI SDK Hexagonal Architecture
+
+## 🎯 Documentos Principales
+
+### 1. **[EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md)** 
+� **Resumen Ejecutivo del Proyecto**
+- Descripción general de entregables
+- Stack tecnológico
+- Arquitectura implementada
+- SOLID Principles aplicados
+- Métricas del proyecto
+
+👉 **Recomendado para:** Project Managers, Tech Leads
+
+---
+
+### 2. **[HEXAGONAL_COMPLETE.md](./HEXAGONAL_COMPLETE.md)**
+🏗️ **Documentación Completa de Arquitectura Hexagonal**
+- Estructura de capas (Backend y Frontend)
+- Principios SOLID con ejemplos
+- Flujo de datos completo
+- Ejemplos prácticos
+
+👉 **Recomendado para:** Desarrolladores, Arquitectos
+
+---
+
+### 3. **[ARCHITECTURE_DIAGRAM.md](./ARCHITECTURE_DIAGRAM.md)**
+📊 **Diagramas Visuales de Arquitectura**
+- Diagrama completo del sistema
+- Flujo de request/response
+- Dependency Rule
+- SOLID Principles mapping
+
+👉 **Recomendado para:** Arquitectos, Senior Developers
+
+---
 
 ## 🎯 Inicio Rápido
 
 1. **[SUMMARY.md](./SUMMARY.md)** - 📄 Resumen del proyecto
-   - Qué se ha creado
-   - Cómo empezar en 5 minutos
-   - Comandos principales
-
 2. **[QUICK_START.md](./QUICK_START.md)** - 🚀 Guía rápida
    - Cómo cambiar props del frontend
    - Ejemplos paso a paso
