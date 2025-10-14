@@ -1,0 +1,99 @@
+.sdui-button {
+  border: none;
+  border-radius: var(--radius-medium);
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-small);
+}
+
+.sdui-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.sdui-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.sdui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.sdui-button--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.sdui-button--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.sdui-button--secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.sdui-button--secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-hover);
+}
+
+.sdui-button--success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.sdui-button--success:hover:not(:disabled) {
+  background-color: var(--color-success-hover);
+}
+
+.sdui-button--danger {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.sdui-button--danger:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+}
+
+.sdui-button--warning {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.sdui-button--warning:hover:not(:disabled) {
+  background-color: var(--color-warning-hover);
+}
+
+/* Sizes */
+.sdui-button--small {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.sdui-button--medium {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.sdui-button--large {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Full Width */
+.sdui-button--full-width {
+  width: 100%;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sdui-button--large {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+  }
+}

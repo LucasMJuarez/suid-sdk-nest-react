@@ -1,0 +1,108 @@
+.sdui-alert {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: var(--radius-medium);
+  border: 1px solid;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sdui-alert-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.sdui-alert-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.sdui-alert-text {
+  flex: 1;
+}
+
+.sdui-alert-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.sdui-alert-message {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.sdui-alert-dismiss {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.75rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.sdui-alert-dismiss:hover {
+  opacity: 1;
+}
+
+/* Alert Types */
+.sdui-alert--info {
+  background-color: var(--color-info-bg);
+  border-color: var(--color-info-border);
+  color: var(--color-info-text);
+}
+
+.sdui-alert--success {
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success-border);
+  color: var(--color-success-text);
+}
+
+.sdui-alert--warning {
+  background-color: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning-text);
+}
+
+.sdui-alert--error {
+  background-color: var(--color-error-bg);
+  border-color: var(--color-error-border);
+  color: var(--color-error-text);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sdui-alert {
+    padding: 0.75rem;
+  }
+
+  .sdui-alert-content {
+    gap: 0.5rem;
+  }
+
+  .sdui-alert-icon {
+    font-size: 1rem;
+  }
+
+  .sdui-alert-message {
+    font-size: 0.8125rem;
+  }
+}

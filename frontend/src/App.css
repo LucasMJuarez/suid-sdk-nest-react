@@ -1,0 +1,77 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: white;
+  box-shadow: var(--shadow-small);
+  padding: var(--spacing-medium) var(--spacing-large);
+  margin-bottom: var(--spacing-large);
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.app-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.error {
+  padding: var(--spacing-large);
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-medium);
+  color: var(--color-error-text);
+  margin: var(--spacing-large);
+  text-align: center;
+}
+
+.error h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-medium);
+}
+
+.error button {
+  margin-top: var(--spacing-medium);
+  padding: 0.5rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.error button:hover {
+  background: var(--color-primary-hover);
+}
