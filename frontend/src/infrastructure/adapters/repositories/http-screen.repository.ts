@@ -28,7 +28,8 @@ export class HttpScreenRepository implements IScreenRepository {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const dto: ScreenDTO = await response.json();
+      const data = await response.json();
+      const dto: ScreenDTO = data.screen || data; // Extraer screen del wrapper
       return ScreenMapper.toEntity(dto);
     } catch (error) {
       if (error instanceof Error) {
@@ -56,7 +57,8 @@ export class HttpScreenRepository implements IScreenRepository {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const dtos: ScreenDTO[] = await response.json();
+      const data = await response.json();
+      const dtos: ScreenDTO[] = Array.isArray(data) ? data : data.screens || [];
       return ScreenMapper.toEntityList(dtos);
     } catch (error) {
       if (error instanceof Error) {

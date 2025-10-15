@@ -19,10 +19,10 @@ export class ScreenMapper {
    */
   static toEntity(dto: ScreenDTO): ScreenEntity {
     const metadata = new ScreenMetadata(
-      dto.title,
-      dto.description,
-      dto.theme,
-      dto.responsive
+      dto.metadata?.title || dto.name,
+      dto.metadata?.description,
+      undefined, // theme not in backend DTO
+      undefined  // responsive not in backend DTO
     );
 
     const components = dto.components.map(compDto => 
@@ -38,10 +38,11 @@ export class ScreenMapper {
   static toDTO(entity: ScreenEntity): ScreenDTO {
     return {
       id: entity.id,
-      title: entity.metadata.title,
-      description: entity.metadata.description,
-      theme: entity.metadata.theme,
-      responsive: entity.metadata.responsive,
+      name: entity.metadata.title,
+      metadata: {
+        title: entity.metadata.title,
+        description: entity.metadata.description
+      },
       components: entity.components.map(comp => this.componentEntityToDto(comp)),
     };
   }

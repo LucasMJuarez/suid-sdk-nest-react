@@ -17,15 +17,18 @@ interface ScreenViewProps {
 }
 
 export const ScreenView: React.FC<ScreenViewProps> = ({ screen }) => {
+  const title = screen.metadata?.title || screen.name;
+  const description = screen.metadata?.description;
+  
   return (
     <div 
-      className={`screen-view ${screen.theme || 'light'} ${screen.responsive ? 'responsive' : ''}`}
+      className="screen-view light responsive"
       data-screen-id={screen.id}
     >
       <header className="screen-header">
-        <h1>{screen.title}</h1>
-        {screen.description && (
-          <p className="screen-description">{screen.description}</p>
+        <h1>{title}</h1>
+        {description && (
+          <p className="screen-description">{description}</p>
         )}
       </header>
 
