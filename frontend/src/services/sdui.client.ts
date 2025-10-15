@@ -1,4 +1,4 @@
-import type { SDUIResponse } from '../types/sdui.types';
+ import type { SDUIResponse } from '../types/sdui.types';
 
 const API_BASE_URL = 'http://localhost:3000';
 
