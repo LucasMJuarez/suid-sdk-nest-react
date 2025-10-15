@@ -6,9 +6,9 @@
  * Principio SOLID: SRP - Solo responsable de la lógica de pantalla
  */
 
-import { ComponentEntity } from './component.entity';
 import { ScreenId } from '../value-objects/screen-id.vo';
 import { ScreenMetadata } from '../value-objects/screen-metadata.vo';
+import { ComponentEntity } from './component.entity';
 
 export class ScreenEntity {
   private constructor(

@@ -6,13 +6,16 @@
  * Principio SOLID: DIP - Depende de la abstracción IScreenService
  */
 
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Param, Query, Inject } from '@nestjs/common';
 import type { IScreenService } from '../../../application/ports/screen-service.interface';
 import type { SDUIResponseDTO } from '../../../application/dtos/screen.dto';
 
 @Controller('sdui')
 export class SDUIController {
-  constructor(private readonly screenService: IScreenService) {}
+  constructor(
+    @Inject('IScreenService')
+    private readonly screenService: IScreenService
+  ) {}
 
   @Get('screen/home')
   async getHomeScreen(): Promise<SDUIResponseDTO> {

@@ -7,14 +7,20 @@
  * Principio SOLID: DIP - Depende de abstracciones
  */
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import type { IScreenService } from '../ports/screen-service.interface';
+import type { IScreenRepository } from '../../domain/ports/screen.repository.interface';
 import { ScreenDTO, SDUIResponseDTO } from '../dtos/screen.dto';
 import { ScreenBuilderService } from '../../domain/services/screen-builder.service';
 import { ScreenMapper } from '../mappers/screen.mapper';
 
 @Injectable()
 export class ScreenApplicationService implements IScreenService {
+  constructor(
+    @Inject('IScreenRepository')
+    private readonly screenRepository: IScreenRepository,
+  ) {}
+
   async getScreenById(screenId: string): Promise<SDUIResponseDTO> {
     let screenDTO: ScreenDTO;
 

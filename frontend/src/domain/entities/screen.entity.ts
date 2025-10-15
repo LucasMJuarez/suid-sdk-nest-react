@@ -7,8 +7,8 @@
  * - OCP: Extensible para agregar nuevas funcionalidades
  */
 
+import { ScreenMetadata } from '../value-objects/screen-metadata.vo';
 import type { ComponentEntity } from './component.entity';
-import type { ScreenMetadata } from '../value-objects/screen-metadata.vo';
 
 export class ScreenEntity {
   constructor(
@@ -19,9 +19,7 @@ export class ScreenEntity {
     this.validate();
   }
 
-  /**
-   * Valida que la pantalla sea válida
-   */
+
   private validate(): void {
     if (!this.id || this.id.trim() === '') {
       throw new Error('Screen ID cannot be empty');
@@ -43,19 +41,6 @@ export class ScreenEntity {
     return Object.freeze([...this._components]);
   }
 
-  /**
-   * Cuenta el número total de componentes
-   */
-  getComponentCount(): number {
-    return this._components.length;
-  }
-
-  /**
-   * Busca un componente por su ID
-   */
-  findComponentById(componentId: string): ComponentEntity | undefined {
-    return this._components.find(comp => comp.id === componentId);
-  }
 
   /**
    * Verifica si la pantalla tiene componentes
@@ -64,10 +49,4 @@ export class ScreenEntity {
     return this._components.length > 0;
   }
 
-  /**
-   * Verifica si la pantalla está vacía
-   */
-  isEmpty(): boolean {
-    return this._components.length === 0;
-  }
 }

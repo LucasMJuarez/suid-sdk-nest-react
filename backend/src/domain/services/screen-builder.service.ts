@@ -23,7 +23,7 @@ export class ScreenBuilderService {
   ) {}
 
   withMetadata(title: string, description?: string): this {
-    this.metadata = ScreenMetadata.create(title, description);
+    this.metadata = ScreenMetadata.create({ title, description });
     return this;
   }
 
